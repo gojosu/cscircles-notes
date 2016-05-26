@@ -1,0 +1,11 @@
+14: Methods - strings and lists support several methods, which are variants of functions.
+
+list.append(X) adds X to the end of the list
+list.insert(i, X) adds X at position i
+list.extend(L) adds a list L of items to the end
+list.remove(X) removes the first occurence of X
+list.pop(i) deletes & returns item list[i], while list.pop() deletes & returns the last item
+del list[i] deletes the ith item of list (Note this is a "del statement", not a method)
+list.reverse() reverses the list
+list.sort() sorts the list
+
