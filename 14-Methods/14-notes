@@ -9,3 +9,5 @@ del list[i] deletes the ith item of list (Note this is a "del statement", not a 
 list.reverse() reverses the list
 list.sort() sorts the list
 
+We can reverse lists but we cannot reverse strings 
+
