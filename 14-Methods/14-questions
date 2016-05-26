@@ -1,8 +1,9 @@
+14a
 Using index and other list methods, write a function replace(list, X, Y) which replaces all occurrences of X in list with Y. 
 For example, if L = [3, 1, 4, 1, 5, 9] then replace(L, 1, 7) would change the contents of L to [3, 7, 4, 7, 5, 9]. 
 To make this exercise a challenge, you are not allowed to use []. 
 Note: you don't need to use return. 
-############################################################################################################################
+
 
 def replace(list,X,Y):
   while X in list:
@@ -16,4 +17,58 @@ def replace(list,X,Y):
 -use a variable to hold the index of X (list.index(X))
 -remove X, keeping in mind we recorded the prior index of these X's using 'a'
 -use list.insert to replace the Y at the prior location of the X's (list.insert(a,Y))
+
+############################################################################################################################
+14b
+Define a function postalValidate(S) which first checks if S represents a postal code which is valid:
+first, delete all spaces;
+the remainder must be of the form L#L#L# where L are letters (in either lower or upper case) and # are numbers.
+If S is not a valid postal code, return the boolean False. 
+If S is valid, return a version of the same postal code in the nice format L#L#L# where each L is capital.
+
+def postalValidate(S):
+   S = S.replace(" ","")
+   if len(S) == 6 and S[0:5:2].isalpha() and S[1:6:2].isdigit():
+      return S.upper()
+   return False
+
+#explanation
+-we replace any whitespace by using S = S.replace(" ","")
+- taking into account 'V4L1D?' as an example..
+
+ V L D
+[0 2 4] are these letters?
+
+ 4 1 ?
+[1 3 5] are these numbers?
+
+The next line of code checks that the length of the string is 6, checks if the characters at position 0,2, and 4 are letters,
+and if the characters at 1,3, and 5 are numbers. This is done by ( S[0:5:2].is alpha ). The [0:5:2] portion increments by two
+in the range of 0 to 5, and we write 5 here to include the 4th character in our range. Stopping at 4 would not include 4.
+-If all of the above is true, we return the postal code with capital letters, using ( return S.upper() ).
+-Otherwise, we return False, signfying an invalid postal code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
